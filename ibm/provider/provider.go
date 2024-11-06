@@ -63,6 +63,7 @@ import (
 	"github.com/IBM-Cloud/terraform-provider-ibm/ibm/service/scc"
 	"github.com/IBM-Cloud/terraform-provider-ibm/ibm/service/schematics"
 	"github.com/IBM-Cloud/terraform-provider-ibm/ibm/service/secretsmanager"
+	"github.com/IBM-Cloud/terraform-provider-ibm/ibm/service/securityverify"
 	"github.com/IBM-Cloud/terraform-provider-ibm/ibm/service/transitgateway"
 	"github.com/IBM-Cloud/terraform-provider-ibm/ibm/service/usagereports"
 	"github.com/IBM-Cloud/terraform-provider-ibm/ibm/service/vmware"
@@ -1600,6 +1601,9 @@ func Provider() *schema.Provider {
 
 			// Logs Router Service
 			"ibm_logs_router_tenant": logsrouting.ResourceIBMLogsRouterTenant(),
+
+			// IBM Security Verify Resource
+			"ibm_verify_oidc_app": securityverify.ResourceIBMSecurityVerifyOidcApp(),
 		},
 
 		ConfigureFunc: providerConfigure,
